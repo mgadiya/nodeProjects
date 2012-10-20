@@ -5,14 +5,5 @@
  * Time: 12:27 PM
  * To change this template use File | Settings | File Templates.
  */
-var myFunc = function helloWorld()
-{
-    console.log('Hello World');
-}
-
-myFunc();
-
-var myFunc2 = myFunc;
-
-myFunc2();
+ACS.init('pFHVWBv5EyeCXtYLL5hLpzsULC0pYa4s', 'DSC42TeHO0pfaq3X2kftw8ZvqTnZ7byQ');
 

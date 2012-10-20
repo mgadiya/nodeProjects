@@ -5,14 +5,18 @@
  * Time: 12:36 PM
  * To change this template use File | Settings | File Templates.
  */
-var http = require('http');
+var formidable = require('formidable'),
+    http = require('http'),
+     url = require('url');
 
 // starts the server and writes a sample response back.
-function start(){
+function start(route,handle){
     function onServerCreation(request,response){
-        response.writeHead(200,{"Content-Type" : "text/plain"});
-        response.write("Hello World");
-        response.end();
+
+        var pathName = url.parse(request.url).pathname;
+        console.log('Request for ' + pathName + ' Received');
+        route(handle, pathName, response, request);
+
     }
     http.createServer(onServerCreation).listen(8888);
     console.log('server has started');
